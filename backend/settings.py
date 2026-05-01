@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-+4#0lj4#3w*ugcsvw%^sed64n(q@g#_9mxsqbwltbujnuq_6%v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["amyrabeautybackend-production.up.railway.app"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
