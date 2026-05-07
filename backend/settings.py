@@ -29,9 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "amyrabeautybackend-production.up.railway.app",
 ]
-CORS_ALLOWED_ORIGINS = [
-    "https://amyrabeutyfrontend.vercel.app",
-]
+ 
 # Application definition
 
 INSTALLED_APPS = [
@@ -85,11 +83,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'backend.wsgi.application'
 
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^https://.*\.vercel\.app$",
+]
+
 CSRF_TRUSTED_ORIGINS = [
     "https://amyrabeautybackend-production.up.railway.app",
-    "https://amyrabeutyfrontend.vercel.app",
-]
-# Database
+    "https://*.vercel.app",
+]atabase
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
 DATABASE_URL = os.getenv(
