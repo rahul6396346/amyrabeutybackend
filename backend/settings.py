@@ -26,9 +26,13 @@ SECRET_KEY = 'django-insecure-+4#0lj4#3w*ugcsvw%^sed64n(q@g#_9mxsqbwltbujnuq_6%v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
-
-
+ALLOWED_HOSTS = [
+    "amyrabeautybackend-production.up.railway.app",
+]
+CSRF_TRUSTED_ORIGINS = [
+    "https://amyrabeautybackend-production.up.railway.app",
+    "https://amyrabeutyfrontend.vercel.app",
+]
 # Application definition
 
 INSTALLED_APPS = [
@@ -81,11 +85,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'backend.wsgi.application'
 
-
+CSRF_TRUSTED_ORIGINS = [
+    "https://amyrabeautybackend-production.up.railway.app",
+]
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-DATABASE_URL = os.getenv("DATABASE_URL")
+DATABASE_URL = os.getenv(
+    "DATABASE_URL",
+    "postgresql://postgres:yVwVtBsazjXeuJDzGITNycyyZcJxuMIt@turntable.proxy.rlwy.net:45443/railway"
+)
 
 print("DATABASE_URL =", DATABASE_URL)
 
